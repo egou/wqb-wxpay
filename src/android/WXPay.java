@@ -1,4 +1,4 @@
-package cn.lovetennis.wqb;
+锘縫ackage cn.lovetennis.wqb;
 
 import java.net.URLEncoder;
 import java.util.Date;
@@ -51,8 +51,6 @@ public class WXPay extends CordovaPlugin implements IWXAPIEventHandler{
 		signParams.add(new BasicNameValuePair("prepayid", req.prepayId));
 		signParams.add(new BasicNameValuePair("timestamp", req.timeStamp));
 		req.sign = genSign(signParams);
-		Log.d("d", "调起支付的package串："+req.packageValue);
-		// 在支付之前，如果应用没有注册到微信，应该先调用IWXMsg.registerApp将应用注册到微信
 		api.sendReq(req);
 	}
 	private String genSign(List<NameValuePair> params) {
@@ -72,12 +70,10 @@ public class WXPay extends CordovaPlugin implements IWXAPIEventHandler{
 		String sha1 = Util.sha1(sb.toString());
 		return sha1;
 	}
-	// 微信发送请求到第三方应用时，会回调到该方法
 	@Override
 	public void onReq(BaseReq req) {
 	}
 
-	// 第三方应用发送到微信的请求处理后的响应结果，会回调到该方法
 	@Override
 	public void onResp(BaseResp resp) {
 		int result = 0;
