@@ -18,11 +18,11 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="WXPay">
-                <param name="android-package" value="cn.lovetennis.wqb.WXPay"/>
+                <param name="android-package" value="cn.lovetennis.wqb"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wqb/WXPay" />
+        <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wqb" />
 
      </platform>
 

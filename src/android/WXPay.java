@@ -1,4 +1,4 @@
-﻿package cn.lovetennis.wqb;
+package cn.lovetennis.wqb;
 
 import java.net.URLEncoder;
 import java.util.Date;
@@ -8,8 +8,11 @@ import java.util.Random;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.JSONException;
 import com.tencent.mm.sdk.constants.Build;
 import com.tencent.mm.sdk.constants.ConstantsAPI;
 import com.tencent.mm.sdk.modelbase.BaseReq;
@@ -33,7 +36,7 @@ public class WXPay extends CordovaPlugin implements IWXAPIEventHandler{
 		callbacks = callbackContext;
 		Activity act = this.cordova.getActivity();
 		api = WXAPIFactory.createWXAPI(act, obj.getString("appid"));
-		api.handleIntent(act.getIntent(), this)
+		api.handleIntent(act.getIntent(), this);
 		PayReq req = new PayReq();
 		req.appId = obj.getString("appid");
 		req.partnerId = obj.getString("partnerid");
@@ -51,7 +54,7 @@ public class WXPay extends CordovaPlugin implements IWXAPIEventHandler{
 		signParams.add(new BasicNameValuePair("prepayid", req.prepayId));
 		signParams.add(new BasicNameValuePair("timestamp", req.timeStamp));
 		req.sign = genSign(signParams);
-		api.sendReq(req);
+		return api.sendReq(req);
 	}
 	private String genSign(List<NameValuePair> params) {
 		StringBuilder sb = new StringBuilder();
@@ -80,16 +83,16 @@ public class WXPay extends CordovaPlugin implements IWXAPIEventHandler{
 		
 		switch (resp.errCode) {
 		case BaseResp.ErrCode.ERR_OK:
-			result = R.string.errcode_success;
+			//result = R.string.errcode_success;
 			break;
 		case BaseResp.ErrCode.ERR_USER_CANCEL:
-			result = R.string.errcode_cancel;
+			//result = R.string.errcode_cancel;
 			break;
 		case BaseResp.ErrCode.ERR_AUTH_DENIED:
-			result = R.string.errcode_deny;
+			//result = R.string.errcode_deny;
 			break;
 		default:
-			result = R.string.errcode_unknown;
+			//result = R.string.errcode_unknown;
 			break;
 		}
 	}
