@@ -8,11 +8,10 @@
     <description>Lovetennis WXPay Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,WXPay</keywords>
-    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git</repo>
-    <issue>https://issues.apache.org/jira/browse/CB/component/12320645</issue>
+    <repo>https://github.com/egou/wqb-wxpay</repo>
 
      <js-module src="www/WXPay.js" name="camera">
-        <clobbers target="navigator.wxpay" />
+        <clobbers target="window.wxpay" />
     </js-module>
 
     <!-- android -->
