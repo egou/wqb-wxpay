@@ -11,7 +11,7 @@
     <repo>https://github.com/egou/wqb-wxpay</repo>
 
      <js-module src="www/WXPay.js" name="wxpay">
-        <clobbers target="window.wxpay" />
+        <clobbers target="navigator.wxpay" />
     </js-module>
 
     <!-- android -->
