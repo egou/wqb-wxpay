@@ -23,6 +23,7 @@
         </config-file>
 
         <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wqb" />
+        <source-file src="src/android/Util.java" target-dir="src/cn/lovetennis/wqb" />
 
      </platform>
 
