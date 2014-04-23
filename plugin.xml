@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cn.lovetennis.wqb.wxpay"
+    version="0.1.0">
+    <name>WXPay</name>
+    <description>Lovetennis WXPay Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,WXPay</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320645</issue>
+
+     <js-module src="www/WXPay.js" name="camera">
+        <clobbers target="navigator.wxpay" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WXPay">
+                <param name="android-package" value="cn.lovetennis.wqb.WXPay"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wqb/WXPay" />
+
+     </platform>
+
+
+     <!-- ios -->
+     <platform name="ios">
+         <config-file target="config.xml" parent="/*">
+             <feature name="WXPay">
+                 <param name="ios-package" value="CDVWXPay" />
+             </feature>
+         </config-file>
+
+         <header-file src="src/ios/CDVWXPay.h" />
+         <source-file src="src/ios/CDVWXPay.m" />
+     </platform>
+
+ 
+</plugin>
+
