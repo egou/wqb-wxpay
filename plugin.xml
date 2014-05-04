@@ -17,13 +17,13 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="WXPay">
-                <param name="android-package" value="cn.lovetennis.wqb"/>
+            <feature name="wxpay">
+                <param name="android-package" value="cn.lovetennis.wx.WXPay"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wqb" />
-        <source-file src="src/android/Util.java" target-dir="src/cn/lovetennis/wqb" />
+        <source-file src="src/android/WXPay.java" target-dir="src/cn/lovetennis/wx" />
+        <source-file src="src/android/Util.java" target-dir="src/cn/lovetennis/wx" />
 
      </platform>
 

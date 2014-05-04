@@ -1,4 +1,4 @@
-package cn.lovetennis.wqb;
+package cn.lovetennis.wx;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
